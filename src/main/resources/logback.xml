@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %black([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldRed" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldRed([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldBlue" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldBlue([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldGreen" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldGreen([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldYellow" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldYellow([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldMagenta" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldMagenta([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldCyan" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldCyan([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldWhite" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%level]) %boldWhite([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    <logger name="org.springframework.beans.factory.annotation.InjectionMetadata" level="TRACE" additivity="false">
+         <appender-ref ref="STDOUT"/>
+     </logger>
+
+     <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="TRACE" additivity="false">
+         <appender-ref ref="STDOUT"/>
+     </logger>-->
+
+    <logger name="A" level="DEBUG" additivity="false">
+        <appender-ref ref="boldRed"/>
+    </logger>
+
+    <logger name="B" level="DEBUG" additivity="false">
+        <appender-ref ref="boldBlue"/>
+    </logger>
+
+    <logger name="C" level="DEBUG" additivity="false">
+        <appender-ref ref="boldGreen"/>
+    </logger>
+
+    <logger name="D" level="DEBUG" additivity="false">
+        <appender-ref ref="boldYellow"/>
+    </logger>
+
+    <logger name="E" level="DEBUG" additivity="false">
+        <appender-ref ref="boldMagenta"/>
+    </logger>
+
+    <logger name="F" level="DEBUG" additivity="false">
+        <appender-ref ref="boldCyan"/>
+    </logger>
+
+    <logger name="G" level="DEBUG" additivity="false">
+        <appender-ref ref="boldWhite"/>
+    </logger>
+
+    <!--日志级别：TRACE < DEBUG < INFO < WARN < ERROR,-->
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

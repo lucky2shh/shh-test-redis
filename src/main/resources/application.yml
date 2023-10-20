@@ -1,0 +1,15 @@
+# Spring
+spring:
+  main:
+    banner-mode: off
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: redis368.cn
+    lettuce:
+      pool:
+        max-active: 8 # 最大连接
+        max-wait: 100 # 最大连接等待时间
+        min-idle: 0 # 最小空闲连接
+        max-idle: 8 # 最大空闲连接
+
