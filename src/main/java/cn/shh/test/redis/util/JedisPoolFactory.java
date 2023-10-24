@@ -15,8 +15,11 @@ public class JedisPoolFactory {
         jedisPoolConfig.setMaxIdle(4);
         jedisPoolConfig.setMinIdle(2);
         jedisPoolConfig.setMaxWait(Duration.ofSeconds(3));
-        jedisPoll = new JedisPool(jedisPoolConfig, "127.0.0.1", 6379,
-                3000, "redis368.cn");
+        jedisPoll = new JedisPool(jedisPoolConfig,
+                "127.0.0.1",
+                6379,
+                3000,
+                "redis368.cn");
     }
 
     public static Jedis getJedisPoll(){

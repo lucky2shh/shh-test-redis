@@ -146,31 +146,31 @@ class SpringDataRedisTest {
                 new Point(15.087269, 37.502669)));
 
         // 获取指定名称的经纬度
-        System.out.print("\nposition: ");
         geoOperations.position("test:geo:k1", "a", "b").forEach(e -> {
-            System.out.print(e + "\t");
+            System.out.println("position: " + e);
         });
         // 获取两个位置之间的距离（可指定单位:m/km/mi(英里)/ft(英尺)）
-        System.out.print("\ndistance: ");
         Distance distance = geoOperations.distance("test:geo:k1", "a", "b");
-        System.out.print(distance.getMetric() + "\t");
+        System.out.println("metric: " + distance.getMetric());
 
-        System.out.print("\nradius: ");
         GeoResults<RedisGeoCommands.GeoLocation<Object>> geoResults = geoOperations.radius("test:geo:k1",
                 new Circle(new Point(13.361389, 38.115556), 100));
-        System.out.print(geoResults + "\t");
+        System.out.println("radius: " + geoResults);
 
         // 以指定点为中心，以指定距离为半径画圆，获取圆中符合要求的位置
         GeoResults<RedisGeoCommands.GeoLocation<Object>> result = geoOperations.search("test:geo:k1",
                 new Circle(new Point(13.361389, 38.115556), 100));
-        System.out.println("\nresult: " + result);
+        System.out.println("result: " + result);
+
         // 获取 距离指定成员指定距离的范围内 符合要求的位置
         GeoResults result2 = geoOperations.search("test:geo:k1", new GeoReference.GeoMemberReference("a"),
                 new Distance(1000, RedisGeoCommands.DistanceUnit.KILOMETERS));
         System.out.println("result2: " + result2);
+
         GeoResults result3 = geoOperations.search("test:geo:k1", new GeoReference.GeoMemberReference("a"),
                 new BoundingBox(100, 100, Metrics.KILOMETERS));
         System.out.println("result3: " + result3);
+
         GeoResults result4 = geoOperations.search("test:geo:k1", new GeoReference.GeoMemberReference("a"),
                 new RadiusShape(new Distance(1000, RedisGeoCommands.DistanceUnit.KILOMETERS)),
                 RedisGeoCommands.GeoSearchCommandArgs.newGeoSearchArgs().includeDistance());

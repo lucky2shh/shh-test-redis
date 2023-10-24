@@ -12,4 +12,3 @@ spring:
         max-wait: 100 # 最大连接等待时间
         min-idle: 0 # 最小空闲连接
         max-idle: 8 # 最大空闲连接
-
